@@ -1,0 +1,14 @@
+$base-black: #000;
+$base-white: #fff;
+$base-gray: #ededed;
+$base-yellow: #F8EDB4;
+$base-red: #bc1519;
+$base-unit: 1em;
+$base: 16;
+
+$screen-xs-em: (480/$base)*1em;
+$screen-sm-em: (768/$base)*1em;
+$screen-md-em: (992/$base)*1em;
+$screen-md-mini-em: (1024/$base)*1em;
+$screen-lg-em: (1200/$base)*1em;
+$screen-xl-em: (1420/$base)*1em;

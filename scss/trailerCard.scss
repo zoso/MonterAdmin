@@ -1,0 +1,59 @@
+.trailer-card {
+    border-bottom: 2px solid $base-gray;
+    margin: $base-unit 0;
+    &-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: $base-unit;
+        @media (min-width: $screen-sm-em) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding-bottom: $base-unit*2;
+        }
+    }
+    &-image, 
+    &-info,
+    &-action {
+        flex: 0 1 100%;
+        &:not(:last-of-type) {
+            margin-bottom: $base-unit;
+        }
+        @media (min-width: $screen-sm-em) {
+            flex: 0 1 33.3333%;
+            margin-bottom: 0;
+        }
+    }
+    &-image {
+        img {
+            margin: 0;
+            @media (min-width: $screen-sm-em) {
+                margin: 0 auto;
+            }
+        }
+    }
+    &-action {
+        @media (min-width: $screen-sm-em) {
+            align-self: center;
+            text-align: center;    
+        }
+    }
+}
+
+dl {
+    margin: 0;
+    dt {
+        float: left;
+        clear: left;
+        width: 150px;
+        color: #999;
+        &:after {
+            content: ":";
+        }
+    }
+    dl {
+        margin: 0 0 0 160px;
+        padding: 0 0 $base-unit/2 0;
+    }
+}

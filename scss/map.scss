@@ -1,0 +1,9 @@
+#map {
+    width: 100%;
+    height: 300px;
+    background-color: grey;
+    margin-bottom: 1em;
+     @media(min-width: $screen-sm-em) {
+        height: 400px;
+    }
+}

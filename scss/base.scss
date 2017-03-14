@@ -1,0 +1,73 @@
+html, body {
+	min-height: 100%;
+}
+
+body {
+    /*position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: "Verdana";
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    background-color: $base-black;
+    overflow-x: hidden;*/
+}
+
+*, *:after, *:before {
+    box-sizing: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: $base-unit/2 0;
+    &.top {
+        background-color: $base-black;
+    }
+    &.middle {
+        background-color: $base-yellow;
+    }
+    &.bottom {
+        background-color: $base-white;
+    }
+}
+
+main {
+    background-color: $base-gray;
+}
+
+footer {
+    padding: $base-unit 0;
+    background-color: $base-black;
+}
+
+.page {
+    &.header {
+        background-color: $base-gray;
+    }
+    &.main {
+        background-color: $base-white;
+        padding: $base-unit/2 0;
+    }
+}
+
+.col-sm-offset-3 {
+    margin-left: 0;
+    @media(min-width: $screen-sm-em) {
+        margin-left: 25%;
+    }
+}
+
+.icon-right {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pg0KPCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPg0KPHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMiAzMiIgaGVpZ2h0PSIzMnB4IiBpZD0iIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KPHBhdGggY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjEuNjk4LDE1LjI4NmwtOS4wMDItOC45OTkgIGMtMC4zOTUtMC4zOTQtMS4wMzUtMC4zOTQtMS40MzEsMGMtMC4zOTUsMC4zOTQtMC4zOTUsMS4wMzQsMCwxLjQyOEwxOS41NTMsMTZsLTguMjg3LDguMjg1Yy0wLjM5NSwwLjM5NC0wLjM5NSwxLjAzNCwwLDEuNDI5ICBjMC4zOTUsMC4zOTQsMS4wMzYsMC4zOTQsMS40MzEsMGw5LjAwMi04Ljk5OUMyMi4wODgsMTYuMzI1LDIyLjA4OCwxNS42NzUsMjEuNjk4LDE1LjI4NnoiIGZpbGw9IiNiYzE1MTkiIGZpbGwtcnVsZT0iZXZlbm9kZCIgaWQ9IkNoZXZyb25fUmlnaHQiLz4NCjxnLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+}

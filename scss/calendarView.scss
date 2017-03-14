@@ -1,0 +1,28 @@
+.calendar-view {
+    margin: $base-unit 0;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $screen-sm-em) {
+        flex-direction: row;
+    }
+    &-item {
+        flex: 0 1 100%;
+        &:not(:last-of-type) {
+            margin-right: $base-unit;
+            border-right: 1px solid #ccc;
+        }
+        @media (min-width: $screen-sm-em) {
+            flex: 0 1 15%;
+        }
+        
+        label {
+            cursor: pointer;
+        }
+
+        input:disabled + label {
+            cursor: default;
+            text-decoration: line-through;
+            color: #ccc;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+/* main file for importing scss files */
+@charset "utf-8";
+
+@import 'vars.scss';
+@import 'base.scss';
+
+@import 'forms.scss';
+@import 'trailerCard.scss';
+@import 'calendarView.scss';
+@import 'map.scss';
+@import 'order-trailers.scss';

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tilhengerutleie - Styleguide</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w="
+        crossorigin="anonymous" />-->
+    <link rel="stylesheet" href="../css/scaffold.css" />
+    <link rel="stylesheet" href="../css/monter.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul>
+                            <li><a href="#">
+                                Varehus?
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="../">Montér Logo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ol>
+                            <li><a href="#">Breadcrumb</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="page header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="h1">Tilhengerutleie</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="h2">
+                            Hvor ønsker du å låne tilhenger?
+                        </h2>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form flex col-6-4">
+                                    <div class="item">
+                                    <select name="" id="trailerSelect">
+                                        <option value="Montér Lillestrøm">Montér Lillestrøm</option>
+                                        <option value="Montér swregwe">Montér Seeg</option>
+                                        <option value="">Montér Ål</option>
+                                        <option value="">Montér Geilo</option>
+                                        <option value="">Montér Nesbyen</option>
+                                        <option value="">Montér Stabæk</option>
+                                        <option value="">Montér Oslo</option>
+                                        <option value="">Montér Gokk</option>
+                                        <option value="">Montér Huttiheita</option>
+                                        <option value="">Montér Pepperngror</option>
+                                    </select>
+                                    </div>
+                                    <div class="item">
+                                        <!--<button class="btn btn-text" type="button" id="">Se varehusene på kart</button>-->
+                                        <a href="map.html">Se varehusene på kart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h2 class="h2">
+                                    Hvilken type tilhenger trenger du?
+                                </h2>
+                                <p>
+                                    For å kunne kjøre bil med tilhenger stiller det krav til hvilken førerkorttype du har. Noen tilhengere krever spesiell sertifisering.
+                                </p>
+                                <p>
+                                    <a href="#">Les mer om kravene her</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <h3 class="h3">Velg tilhengertype</h3>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="trailer-card">
+                                    <h4 class="h4">
+                                        <span class="hidden-xs">Åpen</span>
+                                        <button class="visible-xs btn btn-text" type="button">
+                                            <span class="icon icon-right"></span>
+                                            Åpen
+                                        </button>
+                                    </h4>
+                                    <div class="trailer-card-container hidden-xs">
+                                        <div class="trailer-card-image">
+                                            <img src="../img/tilhenger-aapen.png" alt="Åpen tilhenger">
+                                        </div>
+                                        <div class="trailer-card-info">
+                                            <dl>
+                                                <dt>Max totalvekt</dt>
+                                                <dd>1400kg</dd>
+                                                <dt>Nyttelast</dt>
+                                                <dd>1130kg</dd>
+                                                <dt>Innvendig</dt>
+                                                <dd>2.05 x 1.20 x 0.35 m</dd>
+                                                <dt>Bremser</dt>
+                                                <dd>Ja</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="trailer-card-action">
+                                            <button class="btn btn-default btn-choose-trailer" type="button" value="trailer 1">
+                                                Velg tilhenger
+                                            </button>
+                                            <div class="btn btn-activeindicator">
+                                                <span class="icon sm icon-checked"></span>
+                                                Valgt tilhenger
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="trailer-card">
+                                    <h4 class="h4">
+                                        <span class="hidden-xs">Åpen med boogie</span>
+                                        <button class="visible-xs btn btn-text" type="button">
+                                            <span class="icon icon-right"></span>
+                                            Åpen med boogie
+                                        </button>
+                                    </h4>
+                                    <div class="trailer-card-containe hidden-xs">
+                                        <div class="trailer-card-image">
+                                            <img src="../img/tilhenger-aapen.png" alt="Åpen tilhenger">
+                                        </div>
+                                        <div class="trailer-card-info">
+                                            <dl>
+                                                <dt>Max totalvekt</dt>
+                                                <dd>1400kg</dd>
+                                                <dt>Nyttelast</dt>
+                                                <dd>1130kg</dd>
+                                                <dt>Innvendig</dt>
+                                                <dd>2.05 x 1.20 x 0.35 m</dd>
+                                                <dt>Bremser</dt>
+                                                <dd>Ja</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="trailer-card-action">
+                                            <button class="btn btn-default btn-choose-trailer" type="button" value="trailer 2">
+                                                Velg tilhenger
+                                            </button>
+                                            <div class="btn btn-activeindicator">
+                                                <span class="icon sm icon-checked"></span>
+                                                Valgt tilhenger
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="trailer-card">
+                                    <h4 class="h4">
+                                        <span class="hidden-xs">Grind med boogie</span>
+                                        <button class="visible-xs btn btn-text" type="button">
+                                            <span class="icon icon-right"></span>
+                                            Grind med boogie
+                                        </button>
+                                    </h4>
+                                    <div class="trailer-card-container hidden-xs">
+                                        <div class="trailer-card-image">
+                                            <img src="../img/tilhenger-aapen.png" alt="Åpen tilhenger">
+                                        </div>
+                                        <div class="trailer-card-info">
+                                            <dl>
+                                                <dt>Max totalvekt</dt>
+                                                <dd>1400kg</dd>
+                                                <dt>Nyttelast</dt>
+                                                <dd>1130kg</dd>
+                                                <dt>Innvendig</dt>
+                                                <dd>2.05 x 1.20 x 0.35 m</dd>
+                                                <dt>Bremser</dt>
+                                                <dd>Ja</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="trailer-card-action">
+                                            <button class="btn btn-default btn-choose-trailer" type="button" value="trailer 3">
+                                                Velg tilhenger
+                                            </button>
+                                            <div class="btn btn-activeindicator">
+                                                <span class="icon sm icon-checked"></span>
+                                                Valgt tilhenger
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <h2 class="h2">
+                                    Når ønsker du tilhengeren?
+                                </h2>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <select name="" id="">
+                                            <option value="">Mandag-fredag</option>
+                                            <option value="">Mandag-fredag</option>
+                                            <option value="">Mandag-fredag</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="calendar-view">
+                                            <div class="calendar-view-item">
+                                                <h3 class="h3">
+                                                    <span class="hidden-xs">Mandag 6. mars</span>
+                                                    <button class="visible-xs btn btn-text" type="button">
+                                                        <span class="icon icon-right"></span>
+                                                        Mandag 6. mars
+                                                    </button>
+                                                </h3>
+                                                <ul class="hidden-xs">
+                                                    <li>
+                                                        <input type="radio" id="date1" name="something" value="9-11">
+                                                        <label for="date1">12.00 - 13.00</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="date2" name="something" disabled value="12-13">
+                                                        <label for="date2">12.00 - 13.00</label>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="calendar-view-item">
+                                                <h3 class="h3">
+                                                    <span class="hidden-xs">Tirsdag 7. mars</span>
+                                                    <button class="visible-xs btn btn-text" type="button">
+                                                        <span class="icon icon-right"></span>
+                                                        Tirsdag 7. mars
+                                                    </button>
+                                                </h3>
+                                                <ul class="hidden-xs">
+                                                    <li>
+                                                         <input type="radio" id="date3" name="something" value="9-11">
+                                                        <label for="date3">12.00 - 13.00</label>
+                                                    </li>
+                                                    <li>
+                                                         <input type="radio" id="date4" name="something" value="12-13">
+                                                        <label for="date4">12.00 - 13.00</label>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="calendar-view-item">
+                                                <h3 class="h3">
+                                                    <span class="hidden-xs">Onsdag 8. mars</span>
+                                                    <button class="visible-xs btn btn-text" type="button">
+                                                        <span class="icon icon-right"></span>
+                                                        Onsdag 8. mars
+                                                    </button>
+                                                </h3>
+                                                <ul class="hidden-xs">
+                                                    <li>
+                                                         <input type="radio" id="date5" name="something" value="9-11">
+                                                         <label for="date5">12.00 - 13.00</label>
+                                                    </li>
+                                                    <li>
+                                                         <input type="radio" id="date6" name="something" value="12-13">
+                                                        <label for="date6">12.00 - 13.00</label>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="calendar-view-item">
+                                                <h3 class="h3">
+                                                    <span class="hidden-xs">Torsdag 89. mars</span>
+                                                    <button class="visible-xs btn btn-text" type="button">
+                                                        <span class="icon icon-right"></span>
+                                                        Torsdag 9. mars
+                                                    </button>
+                                                </h3>
+                                                <ul class="hidden-xs">
+                                                    <li>
+                                                         <input type="radio" id="date7" name="something" value="9-11">
+                                                        <label for="date7">12.00 - 13.00</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="date8" name="something" value="12-13">
+                                                        <label for="date8">12.00 - 13.00</label>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="calendar-view-item">
+                                                <h3 class="h3">
+                                                    <span class="hidden-xs">Fredag 10. mars</span>
+                                                    <button class="visible-xs btn btn-text" type="button">
+                                                        <span class="icon icon-right"></span>
+                                                        Fredag 10. mars
+                                                    </button>
+                                                </h3>
+                                                <ul class="hidden-xs">
+                                                <ul>
+                                                    <li>
+                                                        <input type="radio" id="date9" name="something" value="9-11">
+                                                        <label for="date9">09.00 - 11.00</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="date10" name="something" disabled value="12-13">
+                                                        <label for="date10">12.00 - 13.00</label>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                            <div class="calendar-view-item">
+                                                <h3 class="h3">
+                                                    <span class="hidden-xs">Lørdag 11. mars</span>
+                                                    <button class="visible-xs btn btn-text" type="button">
+                                                        <span class="icon icon-right"></span>
+                                                        Lørdag 11. mars
+                                                    </button>
+                                                </h3>
+                                                <ul class="hidden-xs">
+                                                    <li>
+                                                        <input type="radio" id="date11" name="something" value="9-11">
+                                                        <label for="date11">09.00 - 11.00</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type="radio" id="date12" name="something" value="12-13">
+                                                        <label for="date12">12.00 - 13.00</label>
+                                                    </li>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <h2 class="h2">
+                                            Depositum
+                                        </h2>
+                                        <p>
+                                            Når du henter tilhengeren ønsker vi et depositum på 500kr.
+                                        </p>
+                                        <button id="btnSubmit" type="button" class="btn btn-default">Reservér tilhenger</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    Footer
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<link href="//cloud.typenetwork.com/projects/469/fontface.css/" rel="stylesheet">
+<script src="../script/Monter.ChooseTrailer.js"></script>
+</html>

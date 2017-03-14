@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map - Styleguide</title>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w="
+        crossorigin="anonymous" />-->
+    <link rel="stylesheet" href="../css/scaffold.css" />
+    <link rel="stylesheet" href="../css/monter.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul>
+                            <li><a href="#">
+                                Varehus?
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a href="../">Montér Logo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ol>
+                            <li><a href="#">Breadcrumb</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="page header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1 class="h1">Page Header</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="h2">Kart over varehus</h2>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul>
+                            <li>
+                                <a href="forms.html">Form elements</a>
+                            </li>
+                            <li>
+                                <a href="tilhenger.html">Tilhenger</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    Footer
+                </div>
+            </div>
+        </div>
+    </footer>
+    <link href="//cloud.typenetwork.com/projects/469/fontface.css/" rel="stylesheet">
+    <script>
+        var places = [
+            ['Montér Almenningsbutikken', {lat: 60.407670, lng: 10.533950}, 18],
+            ['Montér Bjugn', {lat: 63.763493, lng: 9.8028863}, 16],
+            ['Montér Blom-Bakke', {lat: 58.373710, lng: 8.674256}, 18],
+            ['Montér Brattvåg', {lat: 62.596832, lng: 6.445539}, 17],
+            ['Montér Geilo', {lat: 60.528992, lng: 8.216670}, 18],
+            ['Montér Lofoten', {lat: 68.134662, lng: 13.609367}, 18],
+            ['Montér Nesbyen', {lat: 60.566160, lng: 9.107246}, 18],
+            ['Montér Ål', {lat: 60.631034, lng: 8.565275}, 18],
+            ['Montér Gol', {lat: 60.698325, lng: 8.936839}, 18],
+            ['Montér Lindesnes', {lat: 58.077500, lng: 7.312400}, 18],
+            ['Montér Brattvåg', {lat: 62.596832, lng: 6.445539}, 18]
+        ];
+
+        var infoWindow;
+        var defaultCenter = {lat: 65.463128, lng: 13.579102};//{lat: 59.911491, lng: 10.757933};
+        var defaultZoom = 4;
+
+        function setMarkers(map) {
+            for (var i = 0; i < places.length; i++) {
+                var place = places[i];
+                var marker = new google.maps.Marker({
+                    position: place[1],
+                    map: map,
+                    title: place[0],
+                    content: "<h3>"+place[0]+"</h3><ul><li><a href='#'>Sett som varehus</a></li><li><a href='#'>Gå til byggvarehus</a></li></ul>",
+                    zoom: place[2]
+                });
+
+                var infowindow = new google.maps.InfoWindow({});
+
+                marker.addListener("click", function() {
+                    infowindow.setContent(this.content);
+                    infowindow.open(map, this);
+                    map.panTo(this.getPosition());
+                    map.setZoom(this.zoom);
+                });
+
+                google.maps.event.addListener(infowindow, "closeclick", function() {
+                    map.setZoom(defaultZoom);
+                    map.setCenter(defaultCenter);
+                });
+            }
+        }
+
+        function onResize() {
+            console.log("resizing...");
+        }
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: defaultCenter
+            });
+            setMarkers(map);
+            google.maps.event.addDomListener(window, 'resize', onResize);
+        };
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9XuRndhXUQTonJ_EktLaTIVQf9fHd-Wo&callback=initMap">
+    </script>
+</body>
+</html>

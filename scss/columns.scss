@@ -1,0 +1,22 @@
+$col-w: (200/16)*1em;
+.col {
+    &-container {
+        -ms-columns: $col-w;
+        -ms-column-gap: 1em;
+        columns:  $col-w;
+        column-gap: 1em;
+    }
+    &-item {
+        margin-bottom: 1em;
+        padding: .5em;
+        border: 1px solid #999;
+        background-color: #fff;
+        page-break-inside: avoid;
+        //display: inline;
+        break-inside: avoid;
+        font-size: 75%;
+        img {
+            margin-bottom: .5em;
+        }
+    }
+}

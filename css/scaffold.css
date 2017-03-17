@@ -1,7 +1,4 @@
 /* main file for importing scss files */
-html, body {
-  min-height: 100%; }
-
 body {
   /*position: relative;
     padding: 0;
@@ -57,6 +54,20 @@ footer {
   background-repeat: no-repeat;
   width: 10px;
   height: 10px; }
+
+.input-block {
+  display: block !important;
+  padding: 1em !important; }
+  @media (pointer: coarse) {
+    .input-block {
+      outline: 2px dashed cadetblue; } }
+
+.service-list {
+  /*li:not(:last-of-type) {
+        margin-bottom: 1em;
+    }*/ }
+  .service-list li {
+    margin-bottom: 1em; }
 
 .form-flex-group {
   display: -ms-flexbox;
@@ -327,3 +338,22 @@ dl {
       @media (min-width: 48em) {
         .orders-content-item p {
           font-size: 75%; } }
+
+.col-container {
+  -ms-columns: 12.5em;
+  -ms-column-gap: 1em;
+  -moz-columns: 12.5em;
+  columns: 12.5em;
+  -moz-column-gap: 1em;
+  column-gap: 1em; }
+
+.col-item {
+  margin-bottom: 1em;
+  padding: .5em;
+  border: 1px solid #999;
+  background-color: #fff;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  font-size: 75%; }
+  .col-item img {
+    margin-bottom: .5em; }

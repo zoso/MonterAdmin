@@ -1,5 +1,5 @@
 html, body {
-	min-height: 100%;
+	//min-height: 100%;
 }
 
 body {
@@ -71,3 +71,21 @@ footer {
     width: 10px;
     height: 10px;
 }
+
+.input-block {
+    display: block !important;
+    padding: 1em !important;
+    @media (pointer:coarse) {
+        outline: 2px dashed cadetblue;
+    }
+}
+
+.service-list {
+    li {
+        margin-bottom: 1em;
+    }
+    /*li:not(:last-of-type) {
+        margin-bottom: 1em;
+    }*/
+}
+

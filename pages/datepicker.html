@@ -77,6 +77,42 @@
                         <input type="date" id="dateOrg" name="dateOrg">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="content-divider"></div>
+                            <h2 class="h2">
+                                Datetime local
+                            </h2>
+                            <div>
+                                <input type="datetime-local" name="datetime" id="datetime">
+                            </div>
+                            <div>
+                                <progress max="100" value="75">75/100</progress>
+                            </div>
+                            <div>
+                                <meter min="0" max="100" value="75" low="33" high="66" optimum="50">75</meter>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="content-divider"></div>
+                            <h2 class="h2">Datalist</h2>
+                            <label for="myFruit">What's your favorite fruit?</label>
+                            <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+                                <datalist id="mySuggestion">
+                                <option>Apple</option>
+                                <option>Banana</option>
+                                <option>Blackberry</option>
+                                <option>Blueberry</option>
+                                <option>Lemon</option>
+                                <option>Lychee</option>
+                                <option>Peach</option>
+                                <option>Pear</option>
+                            </datalist>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -91,6 +127,7 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js" integrity="sha256-Cjux44IGDGmZwm+qw4rtfj1swD9zdqmja4gaflupI8o=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/nb.js"></script>
+    <script src="../js/date-input-polyfill.dist.js"></script>
     <script src="../js/pikaday.js"></script>
     <script>
         moment.locale('nb');

@@ -5,7 +5,10 @@ var currentPersonSelected = 0;
 var storeName = document.querySelector("#storeName");
 var storePersons = document.querySelector("#storePersons");
 var personDates = document.querySelector("#personDates");
-
+/*
+    - hver butikk har x slot's 
+    - tidene som kommer i json er bookede slot's
+*/
 storePersons.addEventListener("change", function (e) {
     console.log("Selected", e.target.value);
     var currentPerson = parseInt(e.target.value, 10);
@@ -60,12 +63,17 @@ var onJsonFinished = function onJsonFinished() {
     }
 };
 
-fetch('../data/calendar_kitchen_lillestrom.json').then(function (response) {
-    return response.json();
-}).then(function (json) {
-    console.log("parse json", json);
-    bookings = json;
-    onJsonFinished();
-}).catch(function (err) {
-    console.log("error", err);
-});
+if (self.fetch) {
+    fetch('../data/calendar_kitchen_lillestrom.json').then(function (response) {
+        console.log("response", response);
+        return response.json();
+    }).then(function (json) {
+        console.log("parse json", json);
+        bookings = json;
+        onJsonFinished();
+    }).catch(function (err) {
+        console.log("error", err);
+    });
+} else {
+    storeName.innerHTML = "Klarte ikke å hente data - gammel nettleser";
+}

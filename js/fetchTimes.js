@@ -3,7 +3,10 @@ let currentPersonSelected = 0;
 const storeName = document.querySelector("#storeName");
 const storePersons = document.querySelector("#storePersons");
 const personDates = document.querySelector("#personDates");
-
+/*
+    - hver butikk har x slot's 
+    - tidene som kommer i json er bookede slot's
+*/
 storePersons.addEventListener("change", e => {
     console.log("Selected", e.target.value);
     const currentPerson = parseInt(e.target.value, 10);
@@ -58,14 +61,18 @@ const onJsonFinished = () => {
     }
 }
 
-fetch('../data/calendar_kitchen_lillestrom.json')
-    .then(response => {
-        return response.json();
-    }).then(json => {
-        console.log("parse json", json);
-        bookings = json;
-        onJsonFinished();
-    }).catch(err => {
-        console.log("error", err);
-    });
-
+if (self.fetch) {
+    fetch('../data/calendar_kitchen_lillestrom.json')
+        .then(response => {
+            console.log("response", response);
+            return response.json();
+        }).then(json => {
+            console.log("parse json", json);
+            bookings = json;
+            onJsonFinished();
+        }).catch(err => {
+            console.log("error", err);
+        });
+} else {
+    storeName.innerHTML = "Klarte ikke å hente data - gammel nettleser";
+}

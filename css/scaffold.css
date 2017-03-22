@@ -248,13 +248,14 @@ dl {
   .calendar-view-item {
     -ms-flex: 0 1 100%;
     flex: 0 1 100%; }
-    .calendar-view-item:not(:last-of-type) {
-      margin-right: 1em;
-      border-right: 1px solid #ccc; }
     @media (min-width: 48em) {
       .calendar-view-item {
         -ms-flex: 0 1 15%;
-        flex: 0 1 15%; } }
+        flex: 0 1 15%;
+        padding-right: 1em; }
+        .calendar-view-item:not(:last-of-type) {
+          margin-right: 1em;
+          border-right: 1px solid #ccc; } }
     .calendar-view-item label {
       cursor: pointer; }
     .calendar-view-item input:disabled + label {

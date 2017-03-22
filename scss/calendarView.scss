@@ -7,14 +7,14 @@
     }
     &-item {
         flex: 0 1 100%;
-        &:not(:last-of-type) {
-            margin-right: $base-unit;
-            border-right: 1px solid #ccc;
-        }
         @media (min-width: $screen-sm-em) {
             flex: 0 1 15%;
+            padding-right: $base-unit;
+            &:not(:last-of-type) {
+                margin-right: $base-unit;
+                border-right: 1px solid #ccc;
+            }
         }
-        
         label {
             cursor: pointer;
         }

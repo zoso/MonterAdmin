@@ -3,6 +3,9 @@ let currentPersonSelected = 0;
 const storeName = document.querySelector("#storeName");
 const storePersons = document.querySelector("#storePersons");
 const personDates = document.querySelector("#personDates");
+const storeHours = document.querySelector("#storeHours");
+const timeSlotsDuration = 2; //hours
+
 /*
     - hver butikk har x slot's 
     - tidene som kommer i json er bookede slot's
@@ -24,7 +27,12 @@ storePersons.addEventListener("change", e => {
         item.appendChild(header);
         console.log("times", currentDay.times.length);
         for (let j = 0; j < currentDay.times.length; j++) {
-            let id = "elm"+i+"-"+j;
+            const btn = document.createElement("button");
+            btn.classList.add("btn", "btn-default", "btn-block");
+            btn.value = currentDay.times[j];
+            btn.innerHTML = currentDay.times[j];
+            item.appendChild(btn);
+            /*let id = "elm"+i+"-"+j;
             const ul = document.createElement("ul");
             const li = document.createElement("li");
             const label = document.createElement("label");
@@ -38,19 +46,18 @@ storePersons.addEventListener("change", e => {
             li.appendChild(radio);
             li.appendChild(label);
             ul.appendChild(li);
-            item.appendChild(ul);
+            item.appendChild(ul);*/
         }
     }
     personDates.appendChild(elm);
 });
 
-/*
-
-*/
-
 const onJsonFinished = () => {
     console.log("bookings", bookings.warehouse);
-    storeName.innerHTML = bookings.warehouse;
+    const head = document.createElement("h3");
+    head.classList.add("h2");
+    head.innerHTML = bookings.warehouse;
+    storeName.appendChild(head);
     for (let i = 0; i < bookings.available_bookings.length; i++) {
         const opt = document.createElement("option");
         opt.value = i;
@@ -59,6 +66,21 @@ const onJsonFinished = () => {
         //console.log("Person", bookings.available_bookings[i].person);
         //console.log("dates", bookings.available_bookings[i].dates);
     }
+    const elm = document.createElement("div");
+    elm.classList.add("calendar-view");
+    for (let j = 0; j < bookings.opening_hours.length; j++) {
+        const day = document.createElement("div");
+        day.classList.add("calendar-view-item");
+        const header = document.createElement("h3");
+        header.innerHTML = bookings.opening_hours[j].day;
+        header.classList.add("h3");
+        day.appendChild(header);
+        const hours = document.createElement("div");
+        hours.innerHTML = bookings.opening_hours[j].start + ".00 - " + bookings.opening_hours[j].end+".00";       
+        day.appendChild(hours);
+        elm.appendChild(day);
+    }
+    storeHours.appendChild(elm);
 }
 
 if (self.fetch) {

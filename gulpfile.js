@@ -18,7 +18,7 @@ gulp.task('watch', function() {
     .pipe(webserver({
         port: '8080',
         host: 'localhost',
-        livereload: true,
+        livereload: false,
         open: true
     }));
     gulp.watch('./scss/**/**', ['scss']);

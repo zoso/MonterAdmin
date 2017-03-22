@@ -37,7 +37,6 @@
     }
 
     btnSubmit.addEventListener("click", function (e) {
-        console.log(">", e.target.nextElementSibling);
         console.log("submit", trailer, time);
     });
 })();

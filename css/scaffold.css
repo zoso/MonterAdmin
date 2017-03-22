@@ -447,3 +447,13 @@ date-input-polyfill {
   date-input-polyfill [data-selected] {
     font-weight: bold;
     background: #D8EAF6; }
+
+.slots-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.slots-item {
+  -ms-flex: 0 1 15%;
+  flex: 0 1 15%; }

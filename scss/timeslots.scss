@@ -1,0 +1,9 @@
+.slots {
+    &-container {
+        display: flex;
+        flex-direction: row;
+    }
+    &-item {
+        flex: 0 1 15%;
+    }
+}

@@ -69,6 +69,14 @@ footer {
   .service-list li {
     margin-bottom: 1em; }
 
+.btn-select {
+  display: block !important;
+  width: 100% !important; }
+  .btn-select:not(:last-of-type) {
+    margin-bottom: 1em; }
+  .btn-select.selected {
+    background-color: #33ff33; }
+
 .form-flex-group {
   display: -ms-flexbox;
   display: flex;
@@ -458,3 +466,21 @@ date-input-polyfill {
 .slots-item {
   -ms-flex: 0 1 15%;
   flex: 0 1 15%; }
+
+.slots-select {
+  position: relative;
+  overflow: hidden;
+  width: 100%; }
+  .slots-select input {
+    position: absolute;
+    top: -20px; }
+  .slots-select input:checked + span {
+    background-color: #00FF33;
+    color: black; }
+  .slots-select span {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    padding: .5em 1em;
+    color: #fff;
+    background-color: #ff3300; }

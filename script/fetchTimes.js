@@ -7,14 +7,16 @@ var storePersons = document.querySelector("#storePersons");
 var personDates = document.querySelector("#personDates");
 var storeHours = document.querySelector("#storeHours");
 var timeSlotsDuration = 2; //hours
+var timeSlot = document.querySelector("#timeSlot");
 
 /*
     - hver butikk har x slot's 
     - tidene som kommer i json er bookede slot's
 */
-storePersons.addEventListener("change", function (e) {
-    console.log("Selected", e.target.value);
-    var currentPerson = parseInt(e.target.value, 10);
+
+var selectSlot = function selectSlot(e) {
+    console.log("Selected", e);
+    var currentPerson = parseInt(e, 10);
     personDates.innerHTML = "";
     var elm = document.createElement("div");
     elm.classList.add("calendar-view");
@@ -27,13 +29,32 @@ storePersons.addEventListener("change", function (e) {
         header.innerHTML = currentDay.date;
         elm.appendChild(item);
         item.appendChild(header);
-        console.log("times", currentDay.times.length);
+        //console.log("times", currentDay.times.length);
         for (var j = 0; j < currentDay.times.length; j++) {
-            var btn = document.createElement("button");
-            btn.classList.add("btn", "btn-default", "btn-block");
+            var outer = document.createElement("div");
+            outer.classList.add("radio-group");
+            var label = document.createElement("label");
+            var radio = document.createElement("input");
+            var span = document.createElement("span");
+            var id = "elm" + i + "-" + j;
+            radio.type = "radio";
+            radio.id = id;
+            label.htmlFor = id;
+            label.classList.add("slots-select");
+            span.innerHTML = currentDay.times[j];
+            radio.name = "booking_times";
+            radio.classList.add("slots-radio");
+            radio.value = currentDay.times[j];
+            radio.setAttribute("data-date", currentDay.date);
+            label.appendChild(radio);
+            label.appendChild(span);
+            item.appendChild(label);
+            /*const btn = document.createElement("button");
+            btn.classList.add("btn", "btn-default", "btn-select");
             btn.value = currentDay.times[j];
+            btn.setAttribute("data-date", currentDay.date);
             btn.innerHTML = currentDay.times[j];
-            item.appendChild(btn);
+            item.appendChild(btn);*/
             /*let id = "elm"+i+"-"+j;
             const ul = document.createElement("ul");
             const li = document.createElement("li");
@@ -52,10 +73,28 @@ storePersons.addEventListener("change", function (e) {
         }
     }
     personDates.appendChild(elm);
+    var btns = document.getElementsByClassName("slots-radio");
+    console.log(">> ", btns.length);
+
+    var _loop = function _loop(k) {
+        btns[k].addEventListener("click", function (e) {
+            btns[k].classList.add("selected");
+            console.log("btn", e.target.value, e.target.dataset.date);
+        });
+    };
+
+    for (var k = 0; k < btns.length; k++) {
+        _loop(k);
+    }
+};
+
+storePersons.addEventListener("change", function (e) {
+    selectSlot(e.target.value);
 });
 
 var onJsonFinished = function onJsonFinished() {
-    console.log("bookings", bookings.warehouse);
+    //console.log("bookings", bookings.warehouse);
+    timeSlot.innerHTML = bookings.time_slot;
     var head = document.createElement("h3");
     head.classList.add("h2");
     head.innerHTML = bookings.warehouse;
@@ -65,8 +104,6 @@ var onJsonFinished = function onJsonFinished() {
         opt.value = i;
         opt.text = bookings.available_bookings[i].person;
         storePersons.appendChild(opt);
-        //console.log("Person", bookings.available_bookings[i].person);
-        //console.log("dates", bookings.available_bookings[i].dates);
     }
     var elm = document.createElement("div");
     elm.classList.add("calendar-view");
@@ -83,14 +120,13 @@ var onJsonFinished = function onJsonFinished() {
         elm.appendChild(day);
     }
     storeHours.appendChild(elm);
+    selectSlot(0);
 };
 
 if (self.fetch) {
     fetch('../data/calendar_kitchen_lillestrom.json').then(function (response) {
-        console.log("response", response);
         return response.json();
     }).then(function (json) {
-        console.log("parse json", json);
         bookings = json;
         onJsonFinished();
     }).catch(function (err) {

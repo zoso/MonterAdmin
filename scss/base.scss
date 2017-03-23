@@ -89,3 +89,13 @@ footer {
     }*/
 }
 
+.btn-select {
+    display: block !important;
+    width: 100% !important;
+    &:not(:last-of-type) {
+        margin-bottom: 1em;
+    }
+    &.selected {
+        background-color: #33ff33;
+    } 
+}

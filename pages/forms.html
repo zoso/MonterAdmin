@@ -171,6 +171,27 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="form">
+                                    <div class="item">
+                                        <p>
+                                            Hvis det skal være mulig å slette filer fra FileList, så må bildene lastes opp via ajax. FileList er readOnly og kan ikke tukles med.
+                                        </p>
+                                        <p>
+                                            Det enkleste er å gi tydelig beskjed om at de filene som er valgt også blir lastet opp. Hvis det viser seg at brukeren vil sende færre eller andre bilder, må han velge de på nytt (klikke på browse)
+                                        </p>
+                                        <div id="file-names">
+
+                                        </div>
+                                        <form action="#">
+                                            <label for="theFile">Last opp fil(er)</label>
+                                            <input id="theFile" name="files[]" type="file" multiple="multiple" accept="image/jpeg, image/png, application/pdf" />
+                                            <p>Velg flere filer ved å holde ctrl-tasten nede</p>
+                                            <button type="submit" class="btn btn-default">Last opp</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -186,6 +207,43 @@
             </div>
         </div>
     </footer>
+    <script>
+        var fileInput = document.getElementById("theFile");
+        var fileOutput = document.getElementById("file-names");
+        var fileList;
+        function handleFiles() {
+            fileList = fileInput.files;
+            if (fileInput.multiple == true) {
+                var img = false;
+                var file;
+                for (var i = 0; i < fileInput.files.length; i++) {
+                    console.log("File", fileInput.files[i]);
+                    file = fileInput.files[i];
+                    if (file.type.indexOf("image") != -1) {
+                        console.log("file", file.type);
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            console.log("onload", e);
+                            var imga = new Image();
+                            imga.src = e.target.result;
+                            imga.width = 200;
+                            fileOutput.appendChild(imga);
+                        }
+                        reader.readAsDataURL(file);
+                    } else {
+                        var par = document.createElement("div");
+                        par.innerHTML = "<img src='http://www.freeiconspng.com/uploads/png-file-pdf-icon-14.png' width='100'>"+"Filnavn: "+file.name+" type: "+file.type;
+                        //str += "<li>"+fileInput.files[i].name+" - "+fileInput.files[i].type+"<button type='button' value='"+i+"'>X</button></li>";
+                        fileOutput.appendChild(par);
+                    }
+                }
+            }
+        }
+
+        fileInput.addEventListener("change", handleFiles, false);
+
+        
+    </script>
 </body>
 <link href="//cloud.typenetwork.com/projects/469/fontface.css/" rel="stylesheet">
 </html>

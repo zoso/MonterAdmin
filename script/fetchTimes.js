@@ -29,7 +29,6 @@ var selectSlot = function selectSlot(e) {
         header.innerHTML = currentDay.date;
         elm.appendChild(item);
         item.appendChild(header);
-        //console.log("times", currentDay.times.length);
         for (var j = 0; j < currentDay.times.length; j++) {
             var outer = document.createElement("div");
             outer.classList.add("radio-group");
@@ -49,27 +48,6 @@ var selectSlot = function selectSlot(e) {
             label.appendChild(radio);
             label.appendChild(span);
             item.appendChild(label);
-            /*const btn = document.createElement("button");
-            btn.classList.add("btn", "btn-default", "btn-select");
-            btn.value = currentDay.times[j];
-            btn.setAttribute("data-date", currentDay.date);
-            btn.innerHTML = currentDay.times[j];
-            item.appendChild(btn);*/
-            /*let id = "elm"+i+"-"+j;
-            const ul = document.createElement("ul");
-            const li = document.createElement("li");
-            const label = document.createElement("label");
-            label.htmlFor = id;
-            label.innerHTML = currentDay.times[j];
-            const radio = document.createElement("input");
-            radio.id = id;
-            radio.type = "radio";
-            radio.name = "availeble_time";
-            radio.value = currentDay.times[j];
-            li.appendChild(radio);
-            li.appendChild(label);
-            ul.appendChild(li);
-            item.appendChild(ul);*/
         }
     }
     personDates.appendChild(elm);
@@ -93,7 +71,6 @@ storePersons.addEventListener("change", function (e) {
 });
 
 var onJsonFinished = function onJsonFinished() {
-    //console.log("bookings", bookings.warehouse);
     timeSlot.innerHTML = bookings.time_slot;
     var head = document.createElement("h3");
     head.classList.add("h2");
